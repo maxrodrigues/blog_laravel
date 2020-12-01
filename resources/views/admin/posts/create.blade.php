@@ -10,12 +10,12 @@
                 <div class="col-12 form-group">
                   <label for="">Título</label>
                   <input type="text" name="title" id="title" class="form-control" placeholder="Titulo do Post" aria-describedby="helpId">
-                </div>    
+                </div>
             </div>
             <div class="row">
                 <div class="col-12 form-group">
                   <label for=""></label>
-                  <textarea class="textarea" placeholder="Place some text here"
+                  <textarea class="textarea" placeholder="Texto do post"
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                 </div>
             </div>
@@ -28,11 +28,11 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{'vendor/summernote/summernote-bs4.min.css'}}">
+    <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.min.css') }}">
 @endsection
 
 @section('js')
-    <script src="{{'vendor/summernote/summernote-bs4.min.js'}}"></script>
+    <script src="{{ asset('vendor/summernote/summernote-bs4.min.js') }}"></script>
     <script>
         $(function(){
             $('.textarea').summernote()
