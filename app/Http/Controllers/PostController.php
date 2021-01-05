@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\admin\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -38,9 +39,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
-        dd($request);
+        Post::create([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'text' => $request->text
+        ]);
+        return redirect()->route('admin.posts.index');
     }
 
     /**

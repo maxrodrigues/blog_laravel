@@ -12,6 +12,8 @@ class Post extends Model
     use UserGlobalScope;
     use HasFactory;
 
+    protected $fillable = ['title', 'slug', 'text', 'user_id'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
